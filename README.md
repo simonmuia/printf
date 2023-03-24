@@ -28,3 +28,5 @@ If the program runs successfully, the **return value** is the amount of chars pr
 | R | ROT13 translation of string |
 | S | String with special chars replaced by their ASCII value |
 | % | Character |
+
+&copy;2023
