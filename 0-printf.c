@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdlib.h>
-#include <stdio.h>
 /**
  * _printf - function to perform a printf
  * @format: argument that acts as the string format of what to be printed
@@ -14,11 +11,8 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	while (*format != '\0')
+	while (*format != '\0' && *format == '%')
 	{
-		if (*format == '%')
-		{
-			format++;
 			switch (*format)
 			{
 				case 'c':
@@ -39,14 +33,11 @@ int _printf(const char *format, ...)
 					print_count++;
 					break;
 			}
-		}
-		else
-		{
-			putchar(*format);
-			print_count++;
-		}
+		
 		format++;
 	}
+	putchar(*format);
+	print_count++;
 	va_end(args);
 	return (print_count);
 }
