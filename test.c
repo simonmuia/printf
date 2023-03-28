@@ -3,5 +3,5 @@
 
 int main()
 {
-       _printf("%s\n", "my name"); 	
+       _printf("my name"); 	
 }

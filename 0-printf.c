@@ -6,14 +6,16 @@
  */
 int _printf(const char *format, ...)
 {
-	int print_count = 0;
+	int print_count = 0, i = 0;
 	char *string;
 	va_list args;
 
 	va_start(args, format);
-	while (*format != '\0' && *format == '%')
+	while (*format != '\0')
 	{
-		format++;
+		if (*format == '%')
+		{
+			format++;
 			switch (*format)
 			{
 				case 'c':
@@ -34,10 +36,14 @@ int _printf(const char *format, ...)
 					print_count++;
 					break;
 			}
+		}
+		else
+		{
+			putchar(*format);
+			print_count++;
+		}
 		format++;
 	}
-	putchar(*format);
-	print_count++;
 	va_end(args);
 	return (print_count);
 }
