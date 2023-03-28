@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (*format != '\0' && *format == '%')
 	{
+		format++;
 			switch (*format)
 			{
 				case 'c':
@@ -33,7 +34,6 @@ int _printf(const char *format, ...)
 					print_count++;
 					break;
 			}
-		
 		format++;
 	}
 	putchar(*format);
