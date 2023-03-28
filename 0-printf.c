@@ -19,27 +19,27 @@ int _printf(const char *format, ...)
 			switch (*format)
 			{
 				case 'c':
-					putchar(va_arg(args, int));
+					_putchar(va_arg(args, int));
 					print_count++;
 					break;
 				case 's':
 					string = va_arg(args, char *);
 					while (*string != '\0')
 					{
-						putchar(*string);
+						_putchar(*string);
 						string++;
 						print_count++;
 					}
 					break;
 				case '%':
-					putchar('%');
+					_putchar('%');
 					print_count++;
 					break;
 			}
 		}
 		else
 		{
-			putchar(*format);
+			_putchar(*format);
 			print_count++;
 		}
 		format++;
