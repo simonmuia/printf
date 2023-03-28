@@ -6,6 +6,7 @@
 #include <stdlib.h>
 
 #define BUFF_SIZE 1024
+#define UNUSED(x) (void)(x)
 
 int _printf(const char *format, ...);
 
