@@ -3,10 +3,10 @@
  * print_int - Print int
  * @types: Lista of arguments
  * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width.
- * @precision: Precision specification
- * @size: Size specifier
+ * @fg:  Calculates active flags
+ * @wd: get width.
+ * @prec: Precision specification
+ * @sz: Size specifier
  * Return: Number of chars printed
  */
 int print_int(va_list types, char buffer[],
