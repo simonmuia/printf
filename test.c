@@ -3,5 +3,5 @@
 
 int main()
 {
-       _printf("my name"); 	
+       _printf("%s %c%c %% john\n", "my name", 'i', 's'); 	
 }

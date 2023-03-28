@@ -1,0 +1,63 @@
+.TH _printf 3 "2023-03-28" "Version 1.0" "User Commands"
+
+.SH NAME
+_printf - formatted output conversion function
+
+.SH SYNOPSIS
+.B #include <stdio.h>
+.br
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+\fB_printf\fP is a function that produces output according to a format. It accepts a format string \fIformat\fP that is composed of zero or more directives. The function writes output to the standard output stream \fIstdout\fP. The function returns the number of characters printed (excluding the null byte used to end output to strings).
+
+The \fB_printf\fP function handles the following conversion specifiers:
+
+.PP
+\fB%c\fP:
+Prints a single character.
+
+.PP
+\fB%s\fP:
+Prints a string of characters.
+
+.PP
+\fB%%\fP:
+Prints a single % character.
+
+The function does not reproduce the buffer handling of the C library \fIprintf\fP function. It also does not handle flag characters, field width, precision, or length modifiers.
+
+.SH RETURN VALUE
+The \fB_printf\fP function returns the number of characters printed (excluding the null byte used to end output to strings).
+
+.SH EXAMPLES
+The following example demonstrates how to use the \fB_printf\fP function to print a string and a single character:
+
+.PP
+.B #include <stdio.h>
+.br
+.B int main(void)
+.br
+{
+.br
+.TAB char c = 'A';
+.br
+.TAB char *str = "Hello, world!";
+.br
+.TAB int num_chars = _printf("%s %c\n", str, c);
+.br
+.TAB printf("Number of characters printed: %d\n", num_chars);
+.br
+.TAB return 0;
+.br
+}
+
+.PP
+Output:
+.br
+Hello, world! A
+.br
+Number of characters printed: 15
+
+.SH SEE ALSO
+.BR printf (3)
